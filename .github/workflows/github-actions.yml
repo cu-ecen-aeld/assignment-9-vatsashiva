@@ -1,3 +1,4 @@
+
 name: assignment-test
 on:
     push:
@@ -6,15 +7,6 @@ on:
         branches:
             - '*'
 jobs:
-    full-test:
-        container: cuaesd/aesd-autotest:24-assignment7-buildroot
-        runs-on: self-hosted
-        steps:
-          - uses: actions/checkout@v2
-          - name: Checkout submodules
-            run : git submodule update --init --recursive
-          - name: Run unit test
-            run: ./unit-test.sh
     full-test:
         container: cuaesd/aesd-autotest:24-assignment7
         runs-on: self-hosted
